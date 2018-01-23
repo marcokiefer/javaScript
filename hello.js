@@ -40,8 +40,46 @@ console.log(i === j );
 console.log('Ungleich: !=');
 console.log('striktes Ungleich: !==');
 console.log('---> undefined und null');
-
+//
 var tmp = 42;
 console.log(tmp);
 console.log(typeof tmp);
+// 23.01.2018
+var person = {};
+console.log(person);
+console.log(typeof person);
+person.vorname = 'Max';
+person.nachname = 'Mustermann';
+console.log(person);
+console.log(person.alter);
+person.alter = 27;
+console.log(person);
+delete person.alter;
+console.log(person);
+console.log(person.nachname);
+console.log(person['vorname']);
+
+// Funktionsdefinition
+function sagWas(){
+ console.log("Was!");
+}
+// Funktionsaufruf
+sagWas();
+
+// neue Funktion: Zuweisung zu einer Variablen
+var addition = function (zahl1, zahl2){    // annonyme Funktion
+	return zahl1 + zahl2;
+};
+console.log(addition(42,13));
+
+var operation = addition;
+console.log(operation(56,23));
+person.schreiWas = sagWas;
+person.schreiWas();
+
+person.druckeInfo = function(){
+	console.log(this.vorname + ' ' + this.nachname);
+};
+
+person.druckeInfo();
 
